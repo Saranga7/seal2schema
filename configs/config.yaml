@@ -1,0 +1,20 @@
+defaults:
+  - data: default
+  - model: pix2pix
+  - train: default
+  - generate: default
+  - pseudo_label: default
+  - evaluate: default
+  - _self_
+
+mode: train
+seed: 7
+device: cuda
+run_name: ${mode}_${model.name}
+output_dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_${run_name}
+
+hydra:
+  run:
+    dir: ${output_dir}
+  job:
+    chdir: false

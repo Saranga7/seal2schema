@@ -1,0 +1,7 @@
+retrieval_repo: /scratch/mahantas/cross_modal_retrieval
+retrieval_config_name: training_generalization
+retrieval_checkpoint: ${oc.env:CMR_CHECKPOINT,null}
+output_csv: outputs/pseudo_labels/pseudo_pairs.csv
+batch_size: 16
+num_workers: 4
+top_k: 5

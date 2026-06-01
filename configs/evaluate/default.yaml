@@ -1,0 +1,24 @@
+checkpoint_path: null
+generated_dir: null
+split: test
+metrics_csv: metrics.csv
+threshold: 0.5
+retrieval_repo: /scratch/mahantas/cross_modal_retrieval
+retrieval_config_name: training_generalization
+retrieval_checkpoint: ${oc.env:CMR_CHECKPOINT,null}
+
+postprocess:
+  enabled: false
+  threshold_method: otsu
+  threshold: 0.5
+  closing_kernel: 3
+  closing_iterations: 1
+  skeletonize: true
+  skeleton_max_iterations: 100
+  dilation_kernel: 3
+  dilation_iterations: 1
+  save_raw: true
+
+quality_visualizations:
+  enabled: true
+  max_per_quality: 8

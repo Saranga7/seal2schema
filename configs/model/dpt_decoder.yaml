@@ -1,0 +1,22 @@
+name: dpt_decoder
+in_channels: 4
+out_channels: 1
+model_version: Intel/dpt-large
+freeze_backbone: true
+freeze_neck: false
+train_head: true
+image_size: 384
+mask_channels: 32
+encoder_lr: 0.000005
+
+lambda_l1: 100.0
+foreground_weight: 6.0
+bce_loss_weight: 40.0
+dice_loss_weight: 20.0
+skeleton_cldice_loss_weight: 0.5
+skeleton_l1_loss_weight: 1.0
+skeleton_iterations: 20
+
+# Intel/dpt-large
+# Intel/dpt-hybrid-midas
+# Intel/dpt-beit-large-512

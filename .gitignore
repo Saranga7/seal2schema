@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Experiment outputs
+output_logs/
+presentations/
+outputs/
+multirun/
+checkpoints/
+wandb/
+*.pth
+*.pt
+*.ckpt
+
+# Local generated artifacts
+splits/
+*.log
+.DS_Store

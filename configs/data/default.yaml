@@ -1,0 +1,46 @@
+paired_dir: /scratch/mahantas/datasets/MonogramSchema_Seal_pairs
+metadata_csv: /scratch/mahantas/datasets/MonogramSchema_Seal_pairs/metadata.csv
+unpaired_dir: /scratch/mahantas/datasets/285_monograms_segmentations
+splits_dir: splits
+pseudo_pairs_csv: ${pseudo_label.output_csv}
+
+image_size: 224
+input_mode: seal_mask
+batch_size: 8
+num_workers: 8
+limit_train: null
+limit_val: null
+limit_test: null
+
+split:
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+schema_dir_name: schemas_standardized_224
+seal_dir_name: seals
+mask_dir_name: binary_masks
+ann_dir_name: ann
+valid_exts: [".jpg", ".jpeg", ".png", ".tif", ".tiff"]
+expected_paired_count: 332
+expected_unpaired_count: 285
+exclude_quality_labels: [3, q3]
+crop_padding: 0.08
+
+augment:
+  enabled: false
+  crop_jitter: 0.0
+  crop_scale_jitter: 0.0
+  input_affine_enabled: false
+  rotation: 5.0
+  translate: 0.08
+  scale_min: 0.9
+  scale_max: 1.1
+  shear: 3.0
+  seal_brightness: 0.15
+  seal_contrast: 0.15
+  seal_noise_std: 0.03
+
+training_set: real332
+pseudo_confidence_threshold: 0.25
+pseudo_loss_weight: 0.5

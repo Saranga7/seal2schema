@@ -1,0 +1,7 @@
+name: diffusion
+in_channels: 4
+out_channels: 1
+base_channels: 64
+timesteps: 200
+beta_start: 0.0001
+beta_end: 0.02

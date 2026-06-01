@@ -1,0 +1,27 @@
+max_epochs: 100
+lr: 0.0002
+beta1: 0.5
+beta2: 0.999
+save_every: 20
+sample_every: 5
+max_eval_batches: null
+checkpoint_path: null
+resume: false
+amp: true
+selection_metric: binary_iou
+selection_mode: max
+
+eval_after:
+  enabled: true
+  checkpoint: best
+  output_dir: null
+
+wandb:
+  enabled: true
+  project: seal2schema
+  entity: saranga7
+  name: null
+  group: ${model.name}
+  mode: online
+  tags: []
+  log_samples: true

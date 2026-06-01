@@ -1,0 +1,27 @@
+name: stable_diffusion_controlnet
+in_channels: 4
+out_channels: 1
+base_model: runwayml/stable-diffusion-v1-5
+controlnet_model: from_unet
+train_lora: true
+lora_rank: 16
+lora_alpha: 16
+ip_adapter_enabled: true
+ip_adapter_model: h94/IP-Adapter
+ip_adapter_subfolder: models
+ip_adapter_weight_name: ip-adapter_sd15.bin
+ip_adapter_scale: 0.7
+learning_rate: 0.0001
+max_train_steps: 2000
+train_batch_size: 32
+gradient_accumulation_steps: 2
+resolution: 224
+condition_mode: seal_mask
+condition_invert: false
+num_inference_steps: 30
+guidance_scale: 3.0
+controlnet_conditioning_scale: 1.0
+validation_every: 250
+save_every_steps: 500
+prompt: clean black background white line drawing Byzantine monogram schema, vector-like, crisp
+negative_prompt: blurry, noisy, photo, stone texture, gray background, shaded, thick blobs
